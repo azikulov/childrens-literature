@@ -1,0 +1,55 @@
+.main {
+  padding: 2rem 1.5rem;
+  border-right: 2px solid #2121211c;
+  overflow-y: auto;
+}
+
+.main__title {
+  text-align: center;
+  margin-bottom: 0.5rem;
+  color: #212121;
+}
+
+.main__subtitle {
+  text-align: center;
+  color: #212121;
+  margin: 1rem 0 0.5rem 0;
+}
+
+.main p {
+  text-indent: 3rem;
+  font-size: 1.125rem;
+  color: #212121;
+  line-height: 1.5rem;
+}
+
+.main ul {
+  list-style: outside;
+  display: flex;
+  flex-flow: column;
+  row-gap: 0.25rem;
+}
+.main ul li {
+  font-size: 1.125rem;
+  color: #212121;
+  margin-left: 3rem;
+}
+
+table {
+  margin-top: 1rem;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td,
+th {
+  color: #212121;
+  border: 2px solid #eee;
+  padding: 0.75rem;
+}
+
+tr td:first-child {
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.25rem;
+}

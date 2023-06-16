@@ -1,0 +1,103 @@
+@import url("./layout.css");
+
+.main {
+  padding: 2rem 1.5rem;
+  border-right: 2px solid #2121211c;
+  overflow-y: auto;
+}
+
+.main__title {
+  text-align: center;
+  margin-bottom: 0.5rem;
+  color: #212121;
+}
+
+.main p {
+  text-indent: 3rem;
+  font-size: 1.125rem;
+  color: #212121;
+  line-height: 1.5rem;
+}
+
+.main__nav {
+  display: flex;
+  justify-content: center;
+}
+
+.main__nav-list {
+  display: flex;
+  column-gap: 1rem;
+}
+
+.main__nav-item_link {
+  display: inline-block;
+  text-decoration: none;
+  color: #212121;
+  font-weight: 500;
+  padding: 0.55rem 1.25rem;
+  background: #4361ee1c;
+  color: #4361ee;
+  border-radius: 0.5rem;
+  transition: 0.2s ease;
+}
+
+.main__nav-item_link:hover {
+  color: #fff;
+  background: #4361ee;
+}
+
+.test-container {
+  margin-top: 1rem;
+}
+
+.test-container__title {
+  text-indent: 3rem;
+  color: #212121;
+}
+
+.text-center {
+  text-align: center;
+  margin: 0.5rem 0;
+  text-indent: none;
+}
+
+.test-container__author {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.tests {
+  margin: 1rem 3rem;
+}
+
+.answers {
+  margin-top: 0.25rem;
+}
+
+.answers-list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.answers-item {
+  font-size: 1.125rem;
+  color: #212121;
+  line-height: 1.5rem;
+}
+
+.answers-item {
+  background: #4361ee1c;
+  padding: 0.65rem 1.25rem;
+  border-radius: 0.5rem;
+  color: #4361ee;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: 0.2s ease;
+}
+
+label > input:checked ~ .answers-item {
+  background: #4361ee;
+  color: #fff;
+}
