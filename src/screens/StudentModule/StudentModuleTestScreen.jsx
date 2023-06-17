@@ -10,9 +10,14 @@ export function StudentModuleTestScreen() {
 
   const [currentTests, setCurrentTests] = useState([]);
   const [isCompleted, setIsCompleted] = useState(false);
+  const [totalCorrectAnswers, setTotalCorrectAnswers] = useState(0);
 
   function handleCompleteTest() {
     setIsCompleted(true);
+  }
+
+  function handleSelectAnswer() {
+    setTotalCorrectAnswers(totalCorrectAnswers + 1);
   }
 
   useEffect(() => {
@@ -27,7 +32,10 @@ export function StudentModuleTestScreen() {
         <div className="test-container">
           {currentTests?.map((currentTest, index) => (
             <div key={index} className="test-container__item">
-              <h2 className="test-container__title">{currentTest.title}</h2>
+              <h2
+                className="test-container__title"
+                dangerouslySetInnerHTML={{ __html: currentTest.title }}
+              />
 
               <div
                 className="test-container__content"
@@ -38,7 +46,10 @@ export function StudentModuleTestScreen() {
 
               {currentTest.tests?.map((test, index) => (
                 <div key={index} className="tests">
-                  <h3 className="tests__title">{test.title}</h3>
+                  <h3
+                    dangerouslySetInnerHTML={{ __html: test.title }}
+                    className="tests__title"
+                  />
 
                   <div className="answers">
                     <ul className="answers-list">
@@ -48,13 +59,18 @@ export function StudentModuleTestScreen() {
                             disabled={isCompleted}
                             hidden
                             type="radio"
-                            name={currentTest.title}
+                            name={test.title}
                           />
                           <li
                             className={`answers-item ${
                               isCompleted &&
                               (test.correct === answer ? "correct" : "wrong")
                             }`}
+                            onClick={
+                              test.correct === answer
+                                ? handleSelectAnswer
+                                : null
+                            }
                           >
                             <span>{answer}</span>
                           </li>
@@ -67,13 +83,15 @@ export function StudentModuleTestScreen() {
             </div>
           ))}
 
-          {!isCompleted && (
+          {!isCompleted ? (
             <button
               onClick={handleCompleteTest}
               className="test-container__complete-button"
             >
               Завершить
             </button>
+          ) : (
+            <p>Правильные ответы: {totalCorrectAnswers}</p>
           )}
         </div>
       </main>
