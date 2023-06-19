@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 import { Layout } from "../../components/Layout";
 import { tests } from "../../data/tests";
@@ -91,7 +91,19 @@ export function StudentModuleTestScreen() {
               Завершить
             </button>
           ) : (
-            <p>Правильные ответы: {totalCorrectAnswers}</p>
+            <div className="footer">
+              <div className="back">
+                <Link className="back__btn" to="/student-module">
+                  Назад
+                </Link>
+              </div>
+
+              <div className="correct-answers">
+                <span className="correct-answers__text">
+                  Правильные ответы: {totalCorrectAnswers}
+                </span>
+              </div>
+            </div>
           )}
         </div>
       </main>

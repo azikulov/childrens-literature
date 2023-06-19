@@ -169,3 +169,43 @@ label > input:checked ~ .answers-item {
   background: #ef233c;
   color: #fff;
 }
+
+.footer {
+  display: flex;
+  align-items: center;
+  column-gap: 2rem;
+}
+
+.correct-answers {
+  padding: 0.875rem 1.5rem;
+
+  border-radius: 0.5rem;
+  width: 100%;
+
+  background: #4ad66d;
+}
+
+.correct-answers__text {
+  color: #fff;
+  font-weight: 500;
+  font-size: 1.125rem;
+}
+
+.back {
+  background: #4361ee1c;
+
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.back__btn {
+  padding: 0.875rem 1.5rem;
+  text-decoration: none;
+  display: inline-block;
+  font-weight: 500;
+
+  color: #4361ee;
+}
+
+.back:hover {
+}
